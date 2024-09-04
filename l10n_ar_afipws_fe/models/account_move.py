@@ -63,8 +63,6 @@ class AccountMove(models.Model):
     afip_result = fields.Selection(
         [("", "n/a"), ("A", "Aceptado"), ("R", "Rechazado"), ("O", "Observado")],
         "Resultado",
-        readonly=True,
-        states={"draft": [("readonly", False)]},
         copy=False,
         help="AFIP request result",
     )
