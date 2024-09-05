@@ -25,21 +25,15 @@ class AccountMove(models.Model):
         [("CAE", "CAE"), ("CAI", "CAI"), ("CAEA", "CAEA")],
         string="AFIP authorization mode",
         copy=False,
-        readonly=True,
-        states={"draft": [("readonly", False)]},
     )
     afip_auth_code = fields.Char(
         copy=False,
         string="CAE/CAI/CAEA Code",
-        readonly=True,
         size=24,
-        states={"draft": [("readonly", False)]},
     )
     afip_auth_code_due = fields.Date(
         copy=False,
-        readonly=True,
         string="CAE/CAI/CAEA due Date",
-        states={"draft": [("readonly", False)]},
     )
     afip_associated_period_from = fields.Date(
         'AFIP Period from'
